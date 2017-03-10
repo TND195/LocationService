@@ -10,7 +10,7 @@ namespace LocationService.Controllers
 {
     public class CommentController : ApiController
     {
-        public IEnumerable<Comment> Get(int id)
+        public List<Comment> Get(int id)
         {
             CommentDAO blO = new CommentDAO();
             List<Comment> list = blO.getDsBinhLuan(id);

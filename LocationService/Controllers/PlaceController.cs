@@ -11,7 +11,7 @@ namespace LocationService.Controllers
     public class PlaceController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<Place> Get(String str)
+        public List<Place> Get(String str)
         {
 
            PlaceDAO dvO = new PlaceDAO();
