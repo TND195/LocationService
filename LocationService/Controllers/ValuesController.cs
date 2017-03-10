@@ -10,9 +10,9 @@ namespace LocationService.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public List<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new List<string> { "value1", "value2" };
         }
 
         // GET api/values/5
