@@ -335,8 +335,8 @@
   </Target> -->
   <PropertyGroup>
     <PostBuildEvent>
-      if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"
-      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
+      if not exist "$(WebProjectOutputDir)\bin\LocationService" md "$(WebProjectOutputDir)\bin\LocationService"
+      start /MIN xcopy /s /y /R "$(OutDir)locationService\*.*" "$(WebProjectOutputDir)\bin\LocationService"
     </PostBuildEvent>
   </PropertyGroup>
 </Project>
