@@ -18,5 +18,11 @@ namespace LocationService.Controllers
            List<Place> dv = dvO.Search(str);
            return dv;
         }
+        public Place Get(int id)
+        {
+            PlaceDAO placeDAO = new PlaceDAO();
+            Place place = placeDAO.getPlace(id);
+            return place;
+        }
     }
 }

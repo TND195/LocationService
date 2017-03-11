@@ -27,6 +27,18 @@ namespace LocationService.Models
             disconnect();
             return arr;
         }
+        public Place getPlace(int id)
+        {
+            List <Place> list = getDsDiaDiem(id, "DULIEU.MaDuLieu");
+            for(int i=0;i< list.Count;i++)
+            {
+                if(list[i].IdPlace == id)
+                {
+                    return list[i];
+                }
+            }
+            return null;
+        }
         private List<Place> getDsDiaDiem(int idCategory, int id,String str)
         {
             connect();
