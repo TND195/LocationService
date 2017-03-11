@@ -28,11 +28,15 @@ namespace LocationService.Models
             connect();
             string query = "SELECT * FROM TAIKHOAN WHERE Id = " + id;
             IDataReader reader =  executeQuery(query);
-            if (reader.Read())
+            try
             {
+                reader.Read();
                 return true;
             }
-            return false;
+            catch
+            {
+                return false;
+            }
         }
         public bool insertTaiKhoan(Account tk)
         {
