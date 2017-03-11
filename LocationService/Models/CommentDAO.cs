@@ -50,7 +50,7 @@ namespace LocationService.Models
                     bl.IdPlace + ", '" +
                     bl.IdUser + "', N'" +
                     bl.Content + "', " +
-                    bl.Time + ")";
+                    bl.Time.Year + "-" + bl.Time.Month + "-" + bl.Time.Day + ")";
                 executeNonQuery(insertCommand);
                 disconnect();
                 return true;
