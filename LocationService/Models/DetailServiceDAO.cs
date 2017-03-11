@@ -25,5 +25,16 @@ namespace LocationService.Models
             }
             return list;
         }
+        protected override object GetDataFromDataRow(DataTable dt, int i)
+        {
+            DetailService chitiet_dulieu = new DetailService();
+            chitiet_dulieu.IdPlace = (int)dt.Rows[i]["MaDuLieu"];
+            chitiet_dulieu.IdDetailService = (int)dt.Rows[i]["MaChiTiet"];
+            chitiet_dulieu.Name = dt.Rows[i]["Ten"].ToString();
+            chitiet_dulieu.Price = dt.Rows[i]["GiaTien"].ToString();
+            chitiet_dulieu.Note = dt.Rows[i]["ChuThich"].ToString();
+            return (object)chitiet_dulieu;
+        }
+
     }
 }

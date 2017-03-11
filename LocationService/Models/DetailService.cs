@@ -10,7 +10,7 @@ namespace LocationService.Models
         private int idPlace;
         private int idDetailService;
         private string name;
-        private int price;
+        private String price;
         private string note;
 
         public int IdPlace
@@ -52,18 +52,7 @@ namespace LocationService.Models
             }
         }
 
-        public int Price
-        {
-            get
-            {
-                return price;
-            }
-
-            set
-            {
-                price = value;
-            }
-        }
+     
 
         public string Note
         {
@@ -75,6 +64,19 @@ namespace LocationService.Models
             set
             {
                 note = value;
+            }
+        }
+
+        public string Price
+        {
+            get
+            {
+                return price;
+            }
+
+            set
+            {
+                price = value;
             }
         }
     }
