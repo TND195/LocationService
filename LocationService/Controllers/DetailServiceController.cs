@@ -15,6 +15,7 @@ namespace LocationService.Controllers
         {
             DetailServiceDAO detail = new DetailServiceDAO();
             List<DetailService> list = detail.get_ChiTiet_DichVu(id);
+
             return list;
         }
     }
