@@ -12,7 +12,7 @@ namespace LocationService.Models
         public ApproximatString(string nhap)
         {
             s = nhap;
-            saiSo = (int)Math.Round(s.Length * 0.2);
+            saiSo = (int)Math.Round(s.Length * 0.3);
         }
         public bool SoSanh(string s1)
         {
