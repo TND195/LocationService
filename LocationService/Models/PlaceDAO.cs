@@ -14,7 +14,7 @@ namespace LocationService.Models
         private List<Place> getDsDiaDiem(int id,String str)
         {
             connect();
-            string query = "SELECT DULIEU.MaDuLieu, DULIEU.SoNha, DULIEU.KinhDo,DULIEU.ViDo,DULIEU.ChuThich,DULIEU.DanhGia,DICHVU.TenDichVu,DICHVU.Hinh,DUONG.TenDuong,PHUONG.TenPhuong,QUANHUYEN.TenQuanHuyen,TINHTHANH.TenTinhThanh,TENDIADIEM.TenDiaDiem FROM  DULIEU JOIN DICHVU ON DULIEU.MaDichVu = DICHVU.MaDichVu JOIN TUKHOADICHVU ON DULIEU.MaDichVu = TUKHOADICHVU.MaDichVu JOIN DUONG ON DULIEU.MaDuong = DUONG.MaDuong JOIN PHUONG ON DULIEU.MaPhuong = PHUONG.MaPhuong JOIN QUANHUYEN ON DULIEU.MaQuanHuyen = QUANHUYEN.MaQuanHuyen JOIN TINHTHANH ON DULIEU.MaTinhThanh = TINHTHANH.MaTinhThanh JOIN TENDIADIEM ON DULIEU.MaTenDiaDiem = TENDIADIEM.MaTenDiaDiem " + "WHERE " + str + "=" + id;
+            string query = "SELECT DULIEU.MaDuLieu, DULIEU.SoNha, DULIEU.KinhDo,DULIEU.ViDo,DULIEU.ChuThich,DULIEU.DanhGia,DICHVU.TenDichVu,DICHVU.Hinh,DUONG.TenDuong,PHUONG.TenPhuong,QUANHUYEN.TenQuanHuyen,TINHTHANH.TenTinhThanh,TENDIADIEM.TenDiaDiem  FROM TENDIADIEM JOIN DULIEU ON TENDIADIEM.MaTenDiaDiem = DULIEU.MaTenDiaDiem JOIN DICHVU ON DICHVU.MaDichVu = DULIEU.MaDichVu JOIN DUONG ON DUONG.MaDuong = DULIEU.MaDuong JOIN PHUONG ON PHUONG.MaPhuong = DULIEU.MaPhuong JOIN QUANHUYEN ON QUANHUYEN.MaQuanHuyen = DULIEU.MaQuanHuyen JOIN TINHTHANH ON TINHTHANH.MaTinhThanh = DULIEU.MaTinhThanh " + "WHERE " + str + "=" + id;
             adapter = new SqlDataAdapter(query, connection);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset);
@@ -42,7 +42,7 @@ namespace LocationService.Models
         private List<Place> getDsDiaDiem(int idCategory, int id,String str)
         {
             connect();
-            string query = "SELECT DULIEU.MaDuLieu, DULIEU.SoNha, DULIEU.KinhDo,DULIEU.ViDo,DULIEU.ChuThich,DULIEU.DanhGia,DICHVU.TenDichVu,DICHVU.Hinh,DUONG.TenDuong,PHUONG.TenPhuong,QUANHUYEN.TenQuanHuyen,TINHTHANH.TenTinhThanh,TENDIADIEM.TenDiaDiem FROM  DULIEU JOIN DICHVU ON DULIEU.MaDichVu = DICHVU.MaDichVu JOIN TUKHOADICHVU ON DULIEU.MaDichVu = TUKHOADICHVU.MaDichVu JOIN DUONG ON DULIEU.MaDuong = DUONG.MaDuong JOIN PHUONG ON DULIEU.MaPhuong = PHUONG.MaPhuong JOIN QUANHUYEN ON DULIEU.MaQuanHuyen = QUANHUYEN.MaQuanHuyen JOIN TINHTHANH ON DULIEU.MaTinhThanh = TINHTHANH.MaTinhThanh JOIN TENDIADIEM ON DULIEU.MaTenDiaDiem = TENDIADIEM.MaTenDiaDiem " + "WHERE DICHVU.MaDichVu =" + idCategory + " AND " + str + "=" + id;
+            string query = "SELECT DULIEU.MaDuLieu, DULIEU.SoNha, DULIEU.KinhDo,DULIEU.ViDo,DULIEU.ChuThich,DULIEU.DanhGia,DICHVU.TenDichVu,DICHVU.Hinh,DUONG.TenDuong,PHUONG.TenPhuong,QUANHUYEN.TenQuanHuyen,TINHTHANH.TenTinhThanh,TENDIADIEM.TenDiaDiem  FROM TENDIADIEM JOIN DULIEU ON TENDIADIEM.MaTenDiaDiem = DULIEU.MaTenDiaDiem JOIN DICHVU ON DICHVU.MaDichVu = DULIEU.MaDichVu JOIN DUONG ON DUONG.MaDuong = DULIEU.MaDuong JOIN PHUONG ON PHUONG.MaPhuong = DULIEU.MaPhuong JOIN QUANHUYEN ON QUANHUYEN.MaQuanHuyen = DULIEU.MaQuanHuyen JOIN TINHTHANH ON TINHTHANH.MaTinhThanh = DULIEU.MaTinhThanh " + "WHERE DICHVU.MaDichVu =" + idCategory + " AND " + str + "=" + id;
             adapter = new SqlDataAdapter(query, connection);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset);
