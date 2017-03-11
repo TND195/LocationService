@@ -164,7 +164,7 @@ namespace LocationService.Models
                         {
                             for (int j = 0; j < list.Count; j++)
                             {
-                                listPlace = getDsDiaDiem(list[j], "DULIEU.MaDuLieu");
+                                listPlace = getDsDiaDiem(list[j], "TenDiaDiem.MaTenDiaDiem");
                                 return listPlace;
                             }
                         }
