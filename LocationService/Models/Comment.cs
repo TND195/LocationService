@@ -12,8 +12,8 @@ namespace LocationService.Models
         private String content;
         private DateTime time;
         private int idPlace;
-
-       
+        private String name;
+        private String avatar;
 
         public string IdUser
         {
@@ -77,6 +77,32 @@ namespace LocationService.Models
             set
             {
                 idComment = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Avatar
+        {
+            get
+            {
+                return avatar;
+            }
+
+            set
+            {
+                avatar = value;
             }
         }
     }

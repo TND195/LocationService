@@ -13,7 +13,7 @@ namespace LocationService.Models
         public List<Comment> getDsBinhLuan(int id)
         {
             connect();
-            string query = "SELECT * FROM BINHLUAN WHERE MaDuLieu = '" + id + "'";
+            string query = "SELECT * FROM BINHLUAN JOIN TAIKHOAN ON TAIKHOAN.Id = BINHLUAN.IdTaiKhoan WHERE MaDuLieu = '" + id + "'";
             adapter = new SqlDataAdapter(query, connection);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset);
@@ -36,6 +36,8 @@ namespace LocationService.Models
             bl.Content = dt.Rows[i]["NoiDung"].ToString();
             bl.Time = (DateTime)dt.Rows[i]["ThoiGian"];
             bl.IdPlace = (int)dt.Rows[i]["MaDuLieu"];
+            bl.Name = dt.Rows[i]["Ten"].ToString();
+            bl.Avatar = dt.Rows[i]["Hinh"].ToString();
             return (object)bl;
         }
 
