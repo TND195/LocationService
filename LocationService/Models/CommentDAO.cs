@@ -49,8 +49,8 @@ namespace LocationService.Models
                 string insertCommand = "INSERT INTO BINHLUAN VALUES(" +
                     bl.IdPlace + ", '" +
                     bl.IdUser + "', N'" +
-                    bl.Content + "', " +
-                    bl.Time +")";
+                    bl.Content + "', '" +
+                    bl.Time +"')";
                 executeNonQuery(insertCommand);
                 disconnect();
                 return true;
