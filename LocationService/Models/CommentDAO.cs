@@ -34,7 +34,7 @@ namespace LocationService.Models
             bl.IdComment = (int)dt.Rows[i]["MaBinhLuan"];
             bl.IdUser = dt.Rows[i]["IdTaiKhoan"].ToString();
             bl.Content = dt.Rows[i]["NoiDung"].ToString();
-            bl.Time = (dt.Rows[i].IsNull("ThoiGian") == true) ? DateTime.Now : (DateTime)dt.Rows[i]["ThoiGian"];
+            bl.Time = dt.Rows[i]["ThoiGian"].ToString();
             bl.IdPlace = (int)dt.Rows[i]["MaDuLieu"];
             bl.Name = dt.Rows[i]["Ten"].ToString();
             bl.Avatar = dt.Rows[i]["Hinh"].ToString();
@@ -50,7 +50,7 @@ namespace LocationService.Models
                     bl.IdPlace + ", '" +
                     bl.IdUser + "', N'" +
                     bl.Content + "', " +
-                    bl.Time.Year + "-" + bl.Time.Month + "-" + bl.Time.Day + ")";
+                    bl.Time +")";
                 executeNonQuery(insertCommand);
                 disconnect();
                 return true;

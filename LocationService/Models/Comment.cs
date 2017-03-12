@@ -10,7 +10,7 @@ namespace LocationService.Models
         private int idComment;
         private String idUser;
         private String content;
-        private DateTime time;
+        private String time;
         private int idPlace;
         private String name;
         private String avatar;
@@ -41,7 +41,7 @@ namespace LocationService.Models
             }
         }
 
-        public DateTime Time
+        public String Time
         {
             get
             {
