@@ -26,17 +26,13 @@ namespace LocationService.Models
         public bool Login(String id)
         {
             connect();
-            string query = "SELECT * FROM TAIKHOAN WHERE Id = " + id;
-            IDataReader reader =  executeQuery(query);
-            try
+            string query = "SELECT * FROM TAIKHOAN WHERE Id = '" + id + "'";
+            object acc = executeScalar(query);
+            if(acc != null)
             {
-                reader.Read();
                 return true;
             }
-            catch
-            {
-                return false;
-            }
+            return false;
         }
         public bool insertTaiKhoan(Account tk)
         {
