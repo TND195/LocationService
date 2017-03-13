@@ -56,7 +56,7 @@ namespace LocationService.Models
             try
             {
                 connect();
-                string updateCommand = "UPDATE DANHGIA SET DanhGia = " + dg.Scores + "," + "NoiDung = '" +dg.Content + "',ThoiGian = '"+dg.Time +
+                string updateCommand = "UPDATE DANHGIA SET DanhGia = " + dg.Scores + "," + "NoiDung = N'" +dg.Content + "',ThoiGian = '"+dg.Time +
                     "' WHERE IdTaiKhoan = '" + dg.IdUser + "' AND MaDuLieu = " + dg.IdPlace;
                 executeNonQuery(updateCommand);
                 disconnect();
@@ -74,7 +74,7 @@ namespace LocationService.Models
             {
                 connect();
                 string insertCommand = "INSERT INTO DANHGIA  VALUES('"
-                    + dg.IdUser + "', " + dg.IdPlace + ", " + dg.Scores + ",'" + dg.Time + "','" + dg.Content + "')";
+                    + dg.IdUser + "', " + dg.IdPlace + ", " + dg.Scores + ",'" + dg.Time + "',N'" + dg.Content + "')";
                 executeNonQuery(insertCommand);
                 disconnect();
                 return true;
