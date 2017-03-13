@@ -13,7 +13,7 @@ namespace LocationService.Models
         public float getRate(int id)
         {
             connect();
-            string query = "SELECT * FROM DANHGIA WHERE MaDuLieu = " + id;
+            string query = "SELECT* FROM DANHGIA JOIN TAIKHOAN ON TAIKHOAN.Id = DANHGIA.IdTaiKhoan WHERE MaDuLieu = " + id;
             adapter = new SqlDataAdapter(query, connection);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset);
@@ -35,7 +35,7 @@ namespace LocationService.Models
         public List<Rates> getRates(int id)
         {
             connect();
-            string query = " SELECT* FROM DANHGIA JOIN TAIKHOAN ON TAIKHOAN.Id = DANHGIA.IdTaiKhoan WHERE MaDuLieu = " + id;
+            string query = "SELECT* FROM DANHGIA JOIN TAIKHOAN ON TAIKHOAN.Id = DANHGIA.IdTaiKhoan WHERE MaDuLieu = " + id;
             adapter = new SqlDataAdapter(query, connection);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset);
