@@ -7,23 +7,13 @@ namespace LocationService.Models
 {
     public class Rates
     {
-        private String id;
+        private String idUser;
         private int idPlace;
         private float scores;
-
-        public string Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-
+        private String content;
+        private String time;
+        private String name;
+        private String avatar;
         public int IdPlace
         {
             get
@@ -47,6 +37,71 @@ namespace LocationService.Models
             set
             {
                 scores = value;
+            }
+        }
+
+        public string IdUser
+        {
+            get
+            {
+                return idUser;
+            }
+
+            set
+            {
+                idUser = value;
+            }
+        }
+
+        public string Content
+        {
+            get
+            {
+                return content;
+            }
+
+            set
+            {
+                content = value;
+            }
+        }
+
+        public string Time
+        {
+            get
+            {
+                return time;
+            }
+
+            set
+            {
+                time = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Avatar
+        {
+            get
+            {
+                return avatar;
+            }
+
+            set
+            {
+                avatar = value;
             }
         }
     }

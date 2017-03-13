@@ -186,7 +186,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\DetailServiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
@@ -200,13 +199,9 @@
     <Compile Include="Models\ApproximatString.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryDAO.cs" />
-    <Compile Include="Models\City.cs" />
-    <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\CommentDAO.cs" />
     <Compile Include="Models\DataProvider.cs" />
     <Compile Include="Models\DetailService.cs" />
     <Compile Include="Models\DetailServiceDAO.cs" />
-    <Compile Include="Models\District.cs" />
     <Compile Include="Models\FormatString.cs" />
     <Compile Include="Models\KeyCategory.cs" />
     <Compile Include="Models\KeyCategoryDAO.cs" />
@@ -226,8 +221,6 @@
     <Compile Include="Models\PlaceDAO.cs" />
     <Compile Include="Models\Rates.cs" />
     <Compile Include="Models\RatesDAO.cs" />
-    <Compile Include="Models\Street.cs" />
-    <Compile Include="Models\Ward.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

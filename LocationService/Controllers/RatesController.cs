@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace LocationService.Controllers
 {
+    [RoutePrefix("api/Rates")]
     public class RatesController : ApiController
     {
         public bool Put([FromBody]Rates dg)
@@ -19,10 +20,20 @@ namespace LocationService.Controllers
             }
             return true;
         }
+        [Route("Score")]
+        [HttpGet]
         public float Get(int madiadiem)
-        { 
+        {
             RatesDAO dgO = new RatesDAO();
             return dgO.getRate(madiadiem);
+
+        }
+        [Route("List")]
+        [HttpGet]
+        public List<Rates> GetList(int madiadiem)
+        {
+            RatesDAO dgO = new RatesDAO();
+            return dgO.getRates(madiadiem);
         }
     }
 }
