@@ -15,7 +15,7 @@ namespace LocationService.Controllers
         {
 
            PlaceDAO dvO = new PlaceDAO();
-           List<Place> dv = dvO.Search(str);
+           List<Place> dv = dvO.Search2(str);
            return dv;
         }
         public Place Get(int id)

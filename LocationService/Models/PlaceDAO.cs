@@ -74,12 +74,30 @@ namespace LocationService.Models
             dd.Scores = dgO.getRate(dd.IdPlace);
             return (object)dd;
         }
+        public List<Place> Search2(String str)
+        {
+           
+            connect();
+            string query = "SELECT DULIEU.MaDuLieu, DULIEU.SoNha, DULIEU.KinhDo,DULIEU.ViDo,DULIEU.ChuThich,DULIEU.DanhGia,DICHVU.TenDichVu,DICHVU.Hinh,DUONG.TenDuong,PHUONG.TenPhuong,QUANHUYEN.TenQuanHuyen,TINHTHANH.TenTinhThanh,TENDIADIEM.TenDiaDiem  FROM TENDIADIEM JOIN DULIEU ON TENDIADIEM.MaTenDiaDiem = DULIEU.MaTenDiaDiem JOIN DICHVU ON DICHVU.MaDichVu = DULIEU.MaDichVu JOIN DUONG ON DUONG.MaDuong = DULIEU.MaDuong JOIN PHUONG ON PHUONG.MaPhuong = DULIEU.MaPhuong JOIN QUANHUYEN ON QUANHUYEN.MaQuanHuyen = DULIEU.MaQuanHuyen JOIN TINHTHANH ON TINHTHANH.MaTinhThanh = DULIEU.MaTinhThanh " + "WHERE TENDIADIEM.TenDiaDiem  LIKE " + "'%" + str + "%'";
+            adapter = new SqlDataAdapter(query, connection);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset);
+            ArrayList ls = ConvertDataSetToArrayList(dataset);
+            List<Place> arr = new List<Place>();
+            foreach (Object o in ls)
+            {
+                arr.Add((Place)o);
+            }
+            disconnect();
+            return arr;
+        }
         public List<Place> Search(String str)
         {
             List<Place> listPlace = new List<Place>();
             KeyCategoryDAO keyCategoryDAO = new KeyCategoryDAO();
             KeyWord kw = keyCategoryDAO.getCategory(str);
             if(kw != null)
+
             {
                 if(kw.StrKeyFirst == "" && kw.StrKeyLast == "")
                 {
